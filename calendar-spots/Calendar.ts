@@ -29,11 +29,11 @@ class CalendarManager implements ICalendarManager {
     // Gets available slots by filtering slots of the day, checking if each slot is available and has the required duration.
     if (!slotsOfDay.length) return []
 
+    // Gets available slots by filtering slots of the day, checking if each slot is available and has the required duration.
     const availableSlots = slotsOfDay.filter(
       (slot) => this.isSlotAvailable(sessionsOfDay, slot) && this.isSlotShiftEnough(slot, totalDuration),
     )
 
-    // Gets available slots by filtering slots of the day, checking if each slot is available and has the required duration.
     return availableSlots.map((slot) =>
       this.createAvailableSlot({ slotStartHour: slot.start, dateISO, durationInMin, durationBefore, totalDuration }),
     )
